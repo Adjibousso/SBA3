@@ -39,7 +39,7 @@ const squareCount = colorsPicklist.length;
 // const tileCount = fruitsPicklist.length;
 
 // Game state
-let revealedCount = 0;
+let revealedCount = 13;
 let activeSquare = null;
 let awaitingEndOfMove = false;
 
@@ -90,18 +90,20 @@ function buildSquare(color) {
             
 
 			if (revealedCount === squareCount) {
-				alert("Congratulation You win! Refresh ");
+				alert("Congratulation You win! ");
+
 			}
-
+        
 			return;
-		}
-
+		
+        }
 		awaitingEndOfMove = true;
         
 
 		setTimeout(() => {
 			activeSquare.style.backgroundColor = null;
 			element.style.backgroundColor = null;
+            alert ("try again")
 
 			awaitingEndOfMove = false;
 			activeSquare= null;
@@ -112,7 +114,7 @@ function buildSquare(color) {
 	return element;
 }
 
-// Build up tiles
+// Build up squares
 for (let i = 0; i < squareCount; i++) {
 	const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
 	const color = colorsPicklist[randomIndex];
@@ -121,7 +123,4 @@ for (let i = 0; i < squareCount; i++) {
 	colorsPicklist.splice(randomIndex, 1);
 	tilesContainer.appendChild(square);
 }
-let btn = document.createElement("btn");
-document.nodeType.
-document.body.appendChild("btn");
-  
+

@@ -19,8 +19,8 @@
     </div>
     
     
-      <form id="registration" action="/" method="get">
-        <div id ="error"></div>
+      <form id="registration"  onsubmit="validation()">
+        
         <label for="subs" id="text"> <p>If you like it subscribe</p></label>
         <input name="username" type="text" placeholder="Username" required />
         <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
@@ -29,7 +29,7 @@
         <span class="input-icon"><i class="fa-solid fa-envelope"></i></span
         ><br />
 
-        <input
+        <input id="password"
           name="password"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}"
           title="Password must be at least 8 characters, must have 1 uupercase,1 special number "
@@ -38,7 +38,7 @@
           placeholder="Password"/><br /><br />
 
         <div class="flex-row">
-          <input type="submit" value="subscribe"  id="submitSubscription" onsubmit="ahahahahaahah" />
+          <input type="submit" value="subscribe"  id="submitSubscription"/>
         </div>
       </form>
 

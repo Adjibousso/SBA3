@@ -143,27 +143,22 @@ login.style.width = "1000px"
 
 
 
-let email=document.getElementById("email");
-let username =document.getElementById("username");
-const form = document.getElementById("registration")
-const err= document.getElementById("error")
-    form.addEventListener("submit",(e) =>{
+let email=document.getElementById("email").value;
+let username =document.getElementById("username").value;
+let password = document.getElementById("password").value;
 
-        let messages = [];
-        if(username.value ===" " || username.value==null){
-            messages.push("username is require")
-        }
-if(email.value.length >6 ){
-    messages.push("can you enter an email")
-}
-if(messages.length>0){
-    e.preventDefault()
-    err.innerText=messages.join(' , ')
+    function validation(){
+        if(email=="" || username =="" || password=="" )
+        { alert("All field are required")}
+    }
+
+        
+        
     
-}
 
 
-    } )
+
+
     
 
 

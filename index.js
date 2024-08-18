@@ -134,8 +134,28 @@ fDoc.appendChild(p);
 
 console.log (fDoc);
 
+const login = document.getElementById("loginInfo")
+login.style.width = "1000px"
 
+
+
+function confirmEmail(){
+    let email=document.getElementById("email");
+let comfirEmail =document.getElementById("emailComfirmation");
+if(email === comfirEmail){
+    console.log("Your email does not match");
+}
+else{
+    console.log("Merci pour ta subscription");
+}
+
+;
+}
  
+const submitIt = document.getElementById("submitSubscription");
+submitIt.addEventListener("click",confirmEmail());
+
+
 
 
 

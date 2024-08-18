@@ -23,11 +23,11 @@ body {
     align-items: flex-end;
     box-shadow: 15px 15px 5px rgb(124, 108, 108);
 }
-.tilesContainer{
-    width: 50%;
-    height: 100px;
-
+Container{
+    width: 60%;
+    height: 100px; 
 }
+
 
 .resetBtn input{
     align-items: center;
@@ -38,6 +38,15 @@ body {
     
 }
 .resetBtn input:hover {
-    background-color: rgb(96, 135, 146);
+    background-color: rgb(87, 161, 68);
+
+}
+#resetImg {
+ width: 50%;
+ height: 50%;
+ object-fit: cover;
+ margin-top: -550px;
+ margin-left: 330px;
+ transition: opacity 10s  ease 10s;
 
 }

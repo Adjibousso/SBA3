@@ -1,47 +1,39 @@
-const tilesContainer = document.querySelector(".tiles");
-const colors = ["pink", "white", "crimson", "blue", "dodgerblue", "gold"];
+const Container = document.querySelector(".tiles");
+const colors = ["pink", "white", "green", "blue", "purple", "gold"];
 const colorsPicklist = [...colors, ...colors];
 const squareCount = colorsPicklist.length;
+let colorChange = document.getElementsByName("colors");
 
 
 // let noGif =document.createElement("img");
 // mangue.src= "no.jpg";
 // document.body.appendChild(no);
 
-// let papaye =document.createElement("img");
-// mangue.src= "papaye.jpg";
-// document.body.appendChild(papaye);
 
-// let litchi =document.createElement("img");
-// mangue.src= "litchi.jpg";
-// document.body.appendChild(litchi);
 
-// let orange =document.createElement("img");
-// mangue.src= "orange.jpg";
-// document.body.appendChild(orange);
+let winner = document.createElement("img");
+winner.src= "winner2.gif";
+winner.id = "resetImg";
+winner.style.display = "none"; 
+ document.body.appendChild(winner);
 
-// let strawberry =document.createElement("img");
-// mangue.src= "strawberry.jpg";
-// document.body.appendChild(strawberry);
+ let header =document.createElement("header");
+ header.id = "gameTitle";
+ header.style.fontSize ="50px";
+ header.style.color = "red";
+ header.style.fontWeight ="bold" ;
 
-// let banana =document.createElement("img");
-// mangue.src= "banana.jpg";
-// document.body.appendChild(banana);
+ header.innerText = "Can you find the matching color";
+ document.body.prepend(header);
 
-// let ditakh =document.createElement("img");
-// mangue.src= "ditakh.jpg";
-// document.body.appendChild(ditakh);
+ document.body.firstChild.style.fontStyle = "italic";
+ document.body.firstChild.style.color= "blue"
 
-// let raisin =document.createElement("img");
-// mangue.src= "raisin.jpg";
-// document.body.appendChild(raisin);
-
-// const tileCount = fruitsPicklist.length;
-
-// Game state
-let revealedCount = 13;
+// Game first step
+let revealedCount = 0;
 let activeSquare = null;
 let awaitingEndOfMove = false;
+
 
 function buildSquare(color) {
 	const element = document.createElement("div");
@@ -78,9 +70,9 @@ function buildSquare(color) {
         
         
 
-		const colorToMatch = activeSquare.getAttribute("data-color");
+		let colorMatch = activeSquare.getAttribute("data-color");
 
-		if (colorToMatch === color) {
+		if (colorMatch === color) {
 			element.setAttribute("data-revealed", "true");
 			activeSquare.setAttribute("data-revealed", "true");
 
@@ -90,6 +82,7 @@ function buildSquare(color) {
             
 
 			if (revealedCount === squareCount) {
+                winner.style.display = "block";
 				alert("Congratulation You win! ");
 
 			}
@@ -107,7 +100,7 @@ function buildSquare(color) {
 
 			awaitingEndOfMove = false;
 			activeSquare= null;
-		}, 900);
+		}, 800);
         
 	});
 
@@ -121,6 +114,17 @@ for (let i = 0; i < squareCount; i++) {
 	const square = buildSquare(color);
 
 	colorsPicklist.splice(randomIndex, 1);
-	tilesContainer.appendChild(square);
+	Container.appendChild(square);
 }
+
+function reset() {
+let reset = window.location.reload ();
+
+
+}
+
+    
+
+
+
 

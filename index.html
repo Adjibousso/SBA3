@@ -17,16 +17,38 @@
 
         
     </div>
-    <form id="loginInfo">
+    <!-- <form id="loginInfo">
         <label for="subscribe" id="subs"> If you like it? subscribe!</label><br>
         <label for="username" >Username:</label><br>
         <input type="text" id="username" name="username" type="text" pattern="[A-Za-z0-9]{3,10}" required title="Username supposed to be between 3 to 10 characters"><br>
         <label for="email"  >Email:</label><br>
         <input type="email" id="email" name="emai" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
         title="Please Enter a valid email"><br>
-        <label for="emailComfirmation" >Email:</label><br>
-        <input type="email" id="emailComfirmation" name="emailComfirmation" required><br><br>
+        <br>
         <input type="submit" value="Submit" id="submitSubscription"  onclick="confirmEmail()">
+      </form> -->
+
+
+      <form id="registration">
+        <label for="subs"> If you like it subscribe</label><br>
+        <input name="username" type="text" placeholder="Username" required />
+        <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
+
+        <input name="email" type="email" placeholder="Email" required />
+        <span class="input-icon"><i class="fa-solid fa-envelope"></i></span
+        ><br />
+
+        <input
+          name="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}"
+          title="Password must be at least 8 characters, must have 1 uupercase,1 special number "
+          required
+          type="password"
+          placeholder="Password"/><br /><br />
+
+        <div class="flex-row">
+          <input type="submit" value="Register"  id="submitSubscription"  />
+        </div>
       </form>
 
 </body>

@@ -19,6 +19,7 @@ winner.style.display = "none";
  header.style.fontSize ="50px";
  header.style.color = "red";
  header.style.fontWeight ="bold" ;
+ 
 
  header.innerText = "Click me to change the text";
  document.body.prepend(header);
@@ -26,6 +27,7 @@ winner.style.display = "none";
  //style  header (body firstchild)
  document.body.firstChild.style.fontStyle = "italic";
  document.body.firstChild.style.color= "blue"
+ 
 
  //event listener function
 
@@ -140,19 +142,35 @@ login.style.width = "1000px"
 
 
 
-function confirmEmail(){
-    let email=document.getElementById("email");
+
+let email=document.getElementById("email");
 let username =document.getElementById("username");
+const form = document.getElementById("registration")
+const err= document.getElementById("error")
+    form.addEventListener("submit",(e) =>{
 
-
-
-    alert("thank you for your subscription")
+        let messages = [];
+        if(username.value ===" " || username.value==null){
+            messages.push("username is require")
+        }
+if(email.value.length >6 ){
+    messages.push("can you enter an email")
+}
+if(messages.length>0){
+    e.preventDefault()
+    err.innerText=messages.join(' , ')
     
-    return;
 }
 
-const submitIt = document.getElementById("submitSubscription");
-submitIt.addEventListener("click",confirmEmail);
+
+    } )
+    
+
+
+
+
+// const submitIt = document.getElementById("submitSubscription");
+// submitIt.addEventListener("click",confirmEmail);
 
 
 let subscribe = document.getElementById("text")

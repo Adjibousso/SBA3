@@ -48,5 +48,14 @@ Container{
  margin-top: -700px;
  margin-left: 330px;
  transition: opacity 10s  ease 10s;
-border-radius: 100px
+border-radius: 100px;
+
+font-size: larger;
+}
+
+#submitSubscription{
+    background-color: coral;
+    width: 130px;
+    height: 50px;
+    font-size: larger;
 }

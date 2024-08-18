@@ -23,12 +23,15 @@ winner.style.display = "none";
  header.style.color = "red";
  header.style.fontWeight ="bold" ;
 
- header.innerText = "Can you find the matching color";
+ header.innerText = "Click me to change the text";
  document.body.prepend(header);
 
  document.body.firstChild.style.fontStyle = "italic";
  document.body.firstChild.style.color= "blue"
+header.addEventListener("click",function(){
 
+    header.innerText= "Can you guess the matching colors?"
+})
 // Game first step
 let revealedCount = 0;
 let activeSquare = null;

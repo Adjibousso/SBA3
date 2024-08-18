@@ -96,7 +96,7 @@ function buildSquare(color) {
 		setTimeout(() => {
 			activeSquare.style.backgroundColor = null;
 			element.style.backgroundColor = null;
-            alert ("try again")
+            alert ("Keep trying !!!!!!")
 
 			awaitingEndOfMove = false;
 			activeSquare= null;
@@ -122,8 +122,14 @@ let reset = window.location.reload ();
 
 
 }
-
-    
+let fDoc= document.createDocumentFragment();;
+let ul  = document.createElement("ul");
+let li = document.createElement("li") ;
+li.innerText = " Demain est un autre jour";
+document.body.appendChild(fDoc)
+fDoc.appendChild(ul);
+// document.body.appendChild(ul);
+fDoc.appendChild(li)
 
 
 

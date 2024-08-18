@@ -1,9 +1,9 @@
-body {
+* {
 	background: #e3f1f3;
 	margin: 0;
 }
 
-.tiles {
+.squares {
 	margin: 48px auto;
 	width: 50%;
     align-items: end;
@@ -48,5 +48,5 @@ Container{
  margin-top: -700px;
  margin-left: 330px;
  transition: opacity 10s  ease 10s;
-
+border-radius: 100px
 }

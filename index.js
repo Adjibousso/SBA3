@@ -1,22 +1,19 @@
-const Container = document.querySelector(".tiles");
-const colors = ["pink", "white", "green", "blue", "purple", "gold"];
-const colorsPicklist = [...colors, ...colors];
+// variables declaration
+const Container = document.querySelector(".squares");
+let colors = ["pink", "white", "green", "blue", "purple", "gold"];
+let colorsPicklist = [...colors, ...colors];
 const squareCount = colorsPicklist.length;
 let colorChange = document.getElementsByName("colors");
 
 
-// let noGif =document.createElement("img");
-// mangue.src= "no.jpg";
-// document.body.appendChild(no);
-
-
-
+// create winner image
 let winner = document.createElement("img");
 winner.src= "winner2.gif";
 winner.id = "resetImg";
 winner.style.display = "none"; 
  document.body.appendChild(winner);
 
+ // Create a header
  let header =document.createElement("header");
  header.id = "gameTitle";
  header.style.fontSize ="50px";
@@ -26,10 +23,15 @@ winner.style.display = "none";
  header.innerText = "Click me to change the text";
  document.body.prepend(header);
 
+ //style  header (body firstchild)
  document.body.firstChild.style.fontStyle = "italic";
  document.body.firstChild.style.color= "blue"
+
+ //event listener function
+
 header.addEventListener("click",function(){
 
+    // Text change on click
     header.innerText= "Can you guess the matching colors?"
 })
 // Game first step
@@ -37,7 +39,7 @@ let revealedCount = 0;
 let activeSquare = null;
 let awaitingEndOfMove = false;
 
-
+//create  the squares 
 function buildSquare(color) {
 	const element = document.createElement("div");
 
@@ -45,33 +47,28 @@ function buildSquare(color) {
 	element.setAttribute("data-color", color);
 	element.setAttribute("data-revealed", "false");
 
+    // create events on click
 	element.addEventListener("click", () => {
 		const revealed = element.getAttribute("data-revealed");
-        
-
-		if (
+        	if (
 			awaitingEndOfMove
 			|| revealed === "true"
 			|| element == activeSquare
-            
-        
-		) 
+            ) 
         {
-            
-			return;
+            return;
 		}
 
-		// Reveal this color
+		// Reveal  color
 		element.style.backgroundColor = color;
 
 		if (!activeSquare) {
 			activeSquare = element;
 
-			return;
-            
+			return;    
 		}
         
-        
+        //check matching colors and leave them display
 
 		let colorMatch = activeSquare.getAttribute("data-color");
 
@@ -83,7 +80,7 @@ function buildSquare(color) {
 			awaitingEndOfMove = false;
 			revealedCount += 2;
             
-
+// winner display
 			if (revealedCount === squareCount) {
                 winner.style.display = "block";
 				alert("Congratulation You win! ");
@@ -95,13 +92,12 @@ function buildSquare(color) {
         }
 		awaitingEndOfMove = true;
         
-
+// wrong color and timing display
 		setTimeout(() => {
 			activeSquare.style.backgroundColor = null;
 			element.style.backgroundColor = null;
             alert ("Keep trying !!!!!!")
-
-			awaitingEndOfMove = false;
+            awaitingEndOfMove = false;
 			activeSquare= null;
 		}, 800);
         
@@ -110,7 +106,7 @@ function buildSquare(color) {
 	return element;
 }
 
-// Build up squares
+//  squares
 for (let i = 0; i < squareCount; i++) {
 	const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
 	const color = colorsPicklist[randomIndex];
@@ -119,12 +115,14 @@ for (let i = 0; i < squareCount; i++) {
 	colorsPicklist.splice(randomIndex, 1);
 	Container.appendChild(square);
 }
+// refresh window
 
 function reset() {
 let reset = window.location.reload ();
 
 
 }
+//document fragmentation
 let fDoc= document.createDocumentFragment();;
 
 let p = document.createElement("p");
@@ -134,9 +132,9 @@ p.style.fontSize = "50px"
 p.style.color="pink"
 document.body.appendChild(fDoc);
 fDoc.appendChild(p);
-
 console.log (fDoc);
 
+//registration
 const login = document.getElementById("registration")
 login.style.width = "1000px"
 
@@ -146,7 +144,7 @@ function confirmEmail(){
     let email=document.getElementById("email");
 let username =document.getElementById("username");
 
-    
+
 
     alert("thank you for your subscription")
     

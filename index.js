@@ -123,13 +123,19 @@ let reset = window.location.reload ();
 
 }
 let fDoc= document.createDocumentFragment();;
-let ul  = document.createElement("ul");
-let li = document.createElement("li") ;
-li.innerText = " Demain est un autre jour";
-document.body.appendChild(fDoc)
-fDoc.appendChild(ul);
-// document.body.appendChild(ul);
-fDoc.appendChild(li)
+
+let p = document.createElement("p");
+p.id = "fragMe";
+p.innerText = " Demain est un autre jour";
+p.style.fontSize = "50px"
+p.style.color="pink"
+document.body.appendChild(fDoc);
+fDoc.appendChild(p);
+
+console.log (fDoc);
+
+
+ 
 
 
 

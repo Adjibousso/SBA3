@@ -154,6 +154,10 @@ const submitIt = document.getElementById("submitSubscription");
 submitIt.addEventListener("click",confirmEmail);
 
 
+let subscribe = document.getElementById("text")
+subscribe.setAttribute( "style", "color:green; fontStyle:bold" );
+subscribe.setAttribute("id", "text");
+
  
  
 

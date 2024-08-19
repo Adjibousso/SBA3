@@ -1,6 +1,6 @@
 // variables declaration
 const Container = document.querySelector(".squares");
-let colors = ["pink", "white", "green", "blue", "purple", "gold"];
+let colors = ["pink", "white", "green", "blue", "purple", "orange"];
 let colorsPicklist = [...colors, ...colors];
 const squareCount = colorsPicklist.length;
 let colorChange = document.getElementsByName("colors");
@@ -19,6 +19,7 @@ winner.style.display = "none";
  header.style.fontSize ="50px";
  header.style.color = "red";
  header.style.fontWeight ="bold" ;
+ header.setAttribute("class", "bigHead");
  
 
  header.innerText = "Click me to change the text";
@@ -41,7 +42,7 @@ let revealedCount = 0;
 let activeSquare = null;
 let awaitingEndOfMove = false;
 
-//create  the squares 
+//create  the squares couleurs
 function buildSquare(color) {
 	const element = document.createElement("div");
 
@@ -143,41 +144,20 @@ login.style.width = "1000px"
 
 
 
-let email=document.getElementById("email").value;
-let username =document.getElementById("username").value;
-let password = document.getElementById("password").value;
+let email=document.getElementById("email");
+let username =document.getElementById("username");
+let password = document.getElementById("password");
 
     function validation(){
         if(email=="" || username =="" || password=="" )
         { alert("All field are required")}
     }
-
-        
-        
-    
-
+  submitSubscription.addEventListener("click",validation);{
+		alert ("thank you for your subscription")
+	}
 
 
-
-    
-
-
-
-
-// const submitIt = document.getElementById("submitSubscription");
-// submitIt.addEventListener("click",confirmEmail);
-
-
-let subscribe = document.getElementById("text")
-subscribe.setAttribute( "style", "color:green; fontStyle:bold" );
-subscribe.setAttribute("id", "text");
+const subsText = document.querySelector("p");
+subsText.setAttribute("style", "color:green;fontSize:200px" )
 
  
- 
-
-
-
-
-
-
-
